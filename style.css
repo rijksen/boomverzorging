@@ -10,6 +10,10 @@
   --white: #ffffff;
   --line: #d7ddd5;
   --orange: #c97842;
+  --orange-dark: #a85f2e;
+  --line-dark: #c8d2c9;
+  --mist: #cad7d0;
+  --green-990: #11291f;
   --shadow: 0 18px 50px rgba(23, 53, 43, 0.10);
   --radius: 18px;
 }
@@ -20,6 +24,10 @@
 
 html {
   scroll-behavior: smooth;
+}
+
+section[id] {
+  scroll-margin-top: 90px;
 }
 
 body {
@@ -67,12 +75,11 @@ a {
   text-decoration: none;
 }
 
- .logo-image {
+.logo-image {
   display: block;
   width: 130px;
   height: auto;
-} 
-
+}
 
 .nav {
   display: flex;
@@ -118,7 +125,7 @@ a {
 
 .eyebrow {
   margin: 0 0 13px;
-  color: var(--orange);
+  color: var(--orange-dark);
   font-size: 12px;
   font-weight: 800;
   letter-spacing: .15em;
@@ -212,30 +219,8 @@ h3 {
   overflow: hidden;
 }
 
-.hero-card::before,
-.hero-card::after {
-  content: "";
-  position: absolute;
-  border-radius: 50%;
-  background: rgba(255,255,255,.06);
-}
-
-.hero-card::before {
-  width: 280px;
-  height: 280px;
-  top: -90px;
-  right: -60px;
-}
-
-.hero-card::after {
-  width: 220px;
-  height: 220px;
-  bottom: -70px;
-  left: -70px;
-}
-
 .hero-photo {
-  background-image: linear-gradient(rgba(15, 42, 32, .08), rgba(15, 42, 32, .08)), url("https://rijksenboomverzorging.nl/wp-content/uploads/2026/04/IMG_5579-768x1024.jpeg");
+  background-image: linear-gradient(rgba(15, 42, 32, .08), rgba(15, 42, 32, .08)), url("assets/lars.jpg");
   background-size: cover;
   background-position: center 35%;
 }
@@ -334,7 +319,7 @@ h3 {
   position: absolute;
   top: 27px;
   right: 30px;
-  color: var(--orange);
+  color: var(--orange-dark);
   font-size: 12px;
   font-weight: 800;
 }
@@ -362,7 +347,7 @@ h3 {
 }
 
 .service-featured p {
-  color: #cad7d0;
+  color: var(--mist);
 }
 
 .service-card a {
@@ -390,10 +375,9 @@ h3 {
 .about-image {
   position: relative;
   min-height: 510px;
+  overflow: hidden;
   border-radius: 22px 120px 22px 22px;
-  background:
-    linear-gradient(rgba(23,53,43,.05), rgba(23,53,43,.05)),
-    repeating-linear-gradient(45deg, #748d77 0, #748d77 12px, #68806c 12px, #68806c 24px);
+  background: var(--green-700);
   box-shadow: var(--shadow);
 }
 
@@ -444,6 +428,10 @@ h3 {
 .project-one {
   grid-row: span 2;
 }
+
+.project-one { background-image: url("assets/klimwerk.jpg"); }
+.project-two { background-image: url("assets/stormschade.jpg"); }
+.project-three { background-image: url("assets/natuur.jpg"); }
 
 .project-two,
 .project-three {
@@ -532,6 +520,10 @@ blockquote {
   align-items: center;
 }
 
+.contact .eyebrow {
+  color: var(--green-950);
+}
+
 .contact h2 {
   max-width: 700px;
 }
@@ -557,14 +549,15 @@ blockquote {
 
 .contact-placeholder {
   margin-bottom: 28px;
-  color: #cad7d0;
+  line-height: 1.9;
+  color: var(--mist);
   font-size: 14px;
 }
 
 .site-footer {
   padding: 35px 0;
   color: #cbd8d1;
-  background: #11291f;
+  background: var(--green-990);
 }
 
 .footer-inner {
@@ -648,7 +641,7 @@ blockquote {
     min-height: 70px;
   }
 
-  /* .logo-image {
+  /*.logo-image {
     width: 165px;
   } */
 
@@ -669,10 +662,6 @@ blockquote {
 
   .hero-card {
     min-height: 320px;
-  }
-
-  .hero-tree {
-    font-size: 105px;
   }
 
   .section,
@@ -708,10 +697,6 @@ blockquote {
 }
 
 
-.about-image {
-  overflow: hidden;
-}
-
 .about-image img {
   width: 100%;
   height: 100%;
@@ -721,13 +706,9 @@ blockquote {
   object-position: center;
 }
 
-.about-image::after {
-  display: none;
-}
-
 .legal-strip {
   padding: 72px 0;
-  background: #e7eee7;
+  background: var(--green-100);
 }
 
 .legal-inner {
@@ -749,7 +730,7 @@ blockquote {
 
 .kvk {
   padding-left: 35px;
-  border-left: 1px solid #c8d2c9;
+  border-left: 1px solid var(--line-dark);
 }
 
 .kvk span, .kvk strong {
@@ -775,7 +756,84 @@ blockquote {
   .kvk {
     padding-top: 20px;
     padding-left: 0;
-    border-top: 1px solid #c8d2c9;
+    border-top: 1px solid var(--line-dark);
     border-left: 0;
   }
+}
+
+.linkedin-link {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.linkedin-icon {
+  width: 28px;
+  height: 28px;
+  transition: transform .2s ease;
+}
+
+
+.contact-placeholder a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.contact-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.button-outline-light {
+  color: var(--white);
+  border: 1px solid rgba(255,255,255,.6);
+}
+
+/* Footer LinkedIn */
+.footer-inner > .linkedin-link {
+  align-self: center;
+}
+
+.linkedin-link:hover .linkedin-icon {
+  transform: translateY(-2px);
+}
+
+/* Focus */
+a:focus-visible,
+.button:focus-visible {
+  outline: 3px solid var(--orange);
+  outline-offset: 3px;
+}
+
+.contact a:focus-visible {
+  outline-color: var(--white);
+}
+
+@media (max-width: 600px) {
+  .footer-inner {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 18px 20px;
+  }
+
+  .footer-inner > div:first-child {
+    flex: 1 1 100%;
+  }
+
+  .footer-links {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+
+  .footer-inner > .linkedin-link {
+    flex: 0 0 auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .button { transition: none; }
+  .button:hover { transform: none; }
 }

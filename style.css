@@ -510,8 +510,8 @@ blockquote {
 }
 
 .contact {
-  background: var(--orange);
-  /* background: var(#8dbe2e);  */
+  /* background: var(--orange); */
+  background: #8dbe2e; 
 }
 
 .contact-grid {

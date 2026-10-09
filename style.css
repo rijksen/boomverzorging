@@ -228,9 +228,9 @@ h3 {
 .hero-note {
   position: absolute;
   right: 22px;
-  bottom: 22px;
+  bottom: 6px;
   left: 22px;
-  padding: 19px 21px;
+  padding: 10px 21px;
   color: var(--white);
   background: rgba(13, 36, 28, .72);
   border: 1px solid rgba(255,255,255,.14);
@@ -511,6 +511,7 @@ blockquote {
 
 .contact {
   background: var(--orange);
+  /* background: var(#8dbe2e);  */
 }
 
 .contact-grid {
